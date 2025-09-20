@@ -15,6 +15,13 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -35,6 +42,32 @@ export default function Header() {
               priority
             />
           </div>
+          <nav className="hidden md:flex items-center space-x-8">
+            <button
+              onClick={() => scrollToSection('vision')}
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
+            >
+              VISION
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
+            >
+              SERVICES
+            </button>
+            <button
+              onClick={() => scrollToSection('company')}
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
+            >
+              COMPANY
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
+            >
+              CONTACT
+            </button>
+          </nav>
         </div>
       </div>
     </header>

@@ -5,7 +5,7 @@ import SectionTitle from './common/SectionTitle';
 
 export default function Contact() {
   return (
-    <SectionContainer background="gray">
+    <SectionContainer background="gray" id="contact">
       <SectionTitle>
         Contact
       </SectionTitle>

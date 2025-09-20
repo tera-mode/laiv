@@ -21,7 +21,7 @@ export default function Services() {
   ];
 
   return (
-    <SectionContainer background="gray">
+    <SectionContainer background="gray" id="services">
       <div className="max-w-6xl mx-auto">
         <SectionTitle>
           SERVICES

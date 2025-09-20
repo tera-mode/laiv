@@ -5,7 +5,7 @@ import SectionTitle from './common/SectionTitle';
 
 export default function Company() {
   return (
-    <SectionContainer>
+    <SectionContainer id="company">
       <SectionTitle>
         Company
       </SectionTitle>
@@ -20,6 +20,16 @@ export default function Company() {
             <div>
               <h3 className="text-xl font-semibold text-black mb-3">事業内容</h3>
               <p className="text-gray-700">AIを活用したウェブサービスの開発・運営</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-3">設立</h3>
+              <p className="text-gray-700">2025年9月</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-black mb-3">代表社員</h3>
+              <p className="text-gray-700">寺本 雅裕</p>
             </div>
 
             <div>

@@ -4,7 +4,7 @@ import SectionContainer from './common/SectionContainer';
 
 export default function Vision() {
   return (
-    <SectionContainer>
+    <SectionContainer id="vision">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-16 lg:mb-20 text-gray-900">
           VISION
