@@ -1,6 +1,8 @@
 'use client';
 
 import { ExternalLink } from 'lucide-react';
+import SectionContainer from './common/SectionContainer';
+import SectionTitle from './common/SectionTitle';
 
 export default function Services() {
   const services = [
@@ -19,17 +21,14 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-24 lg:py-40 bg-gray-50">
-      <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20 lg:mb-24">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-8">
-              SERVICES
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
-              AIを活用したウェブサービスの開発・運営を行っています
-            </p>
-          </div>
+    <SectionContainer background="gray">
+      <div className="max-w-6xl mx-auto">
+        <SectionTitle>
+          SERVICES
+        </SectionTitle>
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light text-center mb-12">
+          AIを活用したウェブサービスの開発・運営を行っています
+        </p>
 
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {services.map((service, index) => (
@@ -61,8 +60,7 @@ export default function Services() {
               </a>
             ))}
           </div>
-        </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 }

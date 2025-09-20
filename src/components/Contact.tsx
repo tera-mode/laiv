@@ -1,14 +1,14 @@
 'use client';
 
+import SectionContainer from './common/SectionContainer';
+import SectionTitle from './common/SectionTitle';
+
 export default function Contact() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-            Contact
-          </h2>
-        </div>
+    <SectionContainer background="gray">
+      <SectionTitle>
+        Contact
+      </SectionTitle>
 
         <div className="max-w-3xl mx-auto">
           <div className="bg-white p-8 rounded-lg shadow-sm">
@@ -22,8 +22,7 @@ export default function Contact() {
 
             </div>
           </div>
-        </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 }

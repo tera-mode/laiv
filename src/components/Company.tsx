@@ -1,14 +1,14 @@
 'use client';
 
+import SectionContainer from './common/SectionContainer';
+import SectionTitle from './common/SectionTitle';
+
 export default function Company() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-            Company
-          </h2>
-        </div>
+    <SectionContainer>
+      <SectionTitle>
+        Company
+      </SectionTitle>
 
         <div className="max-w-3xl mx-auto">
           <div className="space-y-8">
@@ -30,8 +30,7 @@ export default function Company() {
               </p>
             </div>
           </div>
-        </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 }
