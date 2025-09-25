@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import SectionContainer from './common/SectionContainer';
 import SectionTitle from './common/SectionTitle';
 
@@ -15,11 +16,15 @@ export default function Contact() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-black mb-3">お問い合わせ</h3>
-                <p className="text-gray-700 mb-4">
-                  AIを活用したウェブサービスの開発・運営についてのご相談やお問い合わせは、お気軽にご連絡ください。
-                </p>
               </div>
-
+              <div className="text-center">
+                <Link
+                  href="/contact"
+                  className="inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors duration-200 font-medium"
+                >
+                  お問い合わせフォーム
+                </Link>
+              </div>
             </div>
           </div>
       </div>

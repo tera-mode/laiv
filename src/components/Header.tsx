@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,14 +34,16 @@ export default function Header() {
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <div className="flex items-center">
-            <Image
-              src="/LAIV_logo.png"
-              alt="LAIV"
-              width={120}
-              height={40}
-              className="h-8 lg:h-10 w-auto"
-              priority
-            />
+            <Link href="/">
+              <Image
+                src="/LAIV_logo.png"
+                alt="LAIV"
+                width={120}
+                height={40}
+                className="h-8 lg:h-10 w-auto"
+                priority
+              />
+            </Link>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <button
@@ -61,12 +64,12 @@ export default function Header() {
             >
               COMPANY
             </button>
-            <button
-              onClick={() => scrollToSection('contact')}
+            <Link
+              href="/contact"
               className="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
             >
               CONTACT
-            </button>
+            </Link>
           </nav>
         </div>
       </div>
