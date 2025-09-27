@@ -73,3 +73,36 @@ a {
 .slide-in {
   animation: slideIn 0.6s ease-out;
 }
+
+/* Scroll indicator animations */
+@keyframes fadeInDelayed {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceSubtle {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-4px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+.animate-fade-in-delayed {
+  opacity: 0;
+  animation: fadeInDelayed 1s ease-out 2s forwards;
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 2s infinite;
+}
