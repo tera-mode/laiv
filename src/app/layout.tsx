@@ -38,6 +38,11 @@ export const metadata: Metadata = {
   verification: {
     google: '', // Google Search Consoleの認証コードを設定
   },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({
