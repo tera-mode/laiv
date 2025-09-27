@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     // メール送信
     const { data, error } = await resend.emails.send({
-      from: 'contact@laiv.jp', // Resendで認証済みのドメイン
+      from: 'onboarding@resend.dev', // Resendのデフォルトドメイン
       to: [process.env.CONTACT_EMAIL!],
       subject: `LAIVサイトからのお問い合わせ - ${name}様`,
       html: `
@@ -39,7 +39,8 @@ export async function POST(request: NextRequest) {
           <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
 
           <p style="color: #666; font-size: 12px;">
-            このメールは LAIVコーポレートサイト (https://laiv.jp) のお問い合わせフォームから送信されました。
+            このメールは LAIVコーポレートサイト のお問い合わせフォームから送信されました。<br>
+            返信先: ${email}
           </p>
         </div>
       `,
