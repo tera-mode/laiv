@@ -28,11 +28,6 @@ export default function Company() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-black mb-3">代表社員</h3>
-              <p className="text-gray-700">寺本 雅裕</p>
-            </div>
-
-            <div>
               <h3 className="text-xl font-semibold text-black mb-3">住所</h3>
               <p className="text-gray-700">
                 〒104-0061<br />

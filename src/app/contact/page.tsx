@@ -76,8 +76,8 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 lg:px-8 pt-24 pb-16">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">
-                お問い合わせ
+              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4 uppercase">
+                Contact
               </h1>
               <p className="text-gray-600">
                 AIを活用したウェブサービスについてのご相談やお問い合わせをお待ちしております。

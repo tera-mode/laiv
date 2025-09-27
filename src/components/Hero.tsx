@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden bg-white pt-16 lg:pt-20">
-      <div className="container mx-auto px-6 lg:px-8 text-center max-w-7xl relative z-20 flex flex-col justify-center min-h-full">
+    <section className="h-screen flex items-center justify-center relative overflow-hidden bg-white">
+      <div className="container mx-auto px-6 lg:px-8 text-center max-w-7xl relative z-20 flex flex-col justify-center h-full pt-16 lg:pt-20">
         <div className="max-w-3xl mx-auto space-y-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black" style={{ color: '#000000' }}>
             Live your Life with AI
