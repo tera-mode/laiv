@@ -1,7 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
 
 export async function POST(request: NextRequest) {
   try {
@@ -16,9 +22,10 @@ export async function POST(request: NextRequest) {
     }
 
     // メール送信
-    const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev', // Resendのデフォルトドメイン
-      to: [process.env.CONTACT_EMAIL!],
+    const mailOptions = {
+      from: process.env.GMAIL_USER,
+      to: process.env.CONTACT_EMAIL,
+      replyTo: email,
       subject: `LAIVサイトからのお問い合わせ - ${name}様`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -39,20 +46,13 @@ export async function POST(request: NextRequest) {
           <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
 
           <p style="color: #666; font-size: 12px;">
-            このメールは LAIVコーポレートサイト のお問い合わせフォームから送信されました。<br>
-            返信先: ${email}
+            このメールは LAIVコーポレートサイト のお問い合わせフォームから送信されました。
           </p>
         </div>
       `,
-    });
+    };
 
-    if (error) {
-      console.error('Resend error:', error);
-      return NextResponse.json(
-        { error: 'メールの送信に失敗しました' },
-        { status: 500 }
-      );
-    }
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
       { message: 'お問い合わせありがとうございます。確認次第ご連絡いたします。' },
@@ -60,9 +60,9 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (error) {
-    console.error('API error:', error);
+    console.error('メール送信エラー:', error);
     return NextResponse.json(
-      { error: 'サーバーエラーが発生しました' },
+      { error: 'メールの送信に失敗しました' },
       { status: 500 }
     );
   }
