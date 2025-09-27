@@ -53,17 +53,23 @@ export default function ContactPage() {
           company: '',
           message: ''
         });
+        // 画面上部にスクロール
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setSubmitStatus({
           type: 'error',
           message: result.error || 'エラーが発生しました',
         });
+        // エラー時も上部にスクロール
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } catch (error) {
       setSubmitStatus({
         type: 'error',
         message: 'ネットワークエラーが発生しました',
       });
+      // ネットワークエラー時も上部にスクロール
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } finally {
       setIsSubmitting(false);
     }
@@ -86,12 +92,17 @@ export default function ContactPage() {
 
             <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-8">
               {submitStatus.type && (
-                <div className={`mb-6 p-4 rounded-lg ${
+                <div className={`mb-6 p-4 rounded-lg border-2 ${
                   submitStatus.type === 'success'
-                    ? 'bg-green-50 border border-green-200 text-green-700'
-                    : 'bg-red-50 border border-red-200 text-red-700'
-                }`}>
-                  {submitStatus.message}
+                    ? 'bg-green-50 border-green-300 text-green-800 shadow-md'
+                    : 'bg-red-50 border-red-300 text-red-800 shadow-md'
+                } animate-pulse`}>
+                  <div className="flex items-center">
+                    <div className={`w-4 h-4 rounded-full mr-3 ${
+                      submitStatus.type === 'success' ? 'bg-green-500' : 'bg-red-500'
+                    }`}></div>
+                    <span className="font-medium">{submitStatus.message}</span>
+                  </div>
                 </div>
               )}
 
