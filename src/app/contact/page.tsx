@@ -63,7 +63,7 @@ export default function ContactPage() {
         // エラー時も上部にスクロール
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: 'error',
         message: 'ネットワークエラーが発生しました',

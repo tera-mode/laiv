@@ -9,7 +9,7 @@ export default function Services() {
     {
       name: 'AIくらべ',
       description: '複数のAIサービスを簡単に比較・検討',
-      url: 'https://ai-kurabe.vercel.app/',
+      url: 'https://www.ai-kurabe.jp/',
       details: ''
     },
     {
