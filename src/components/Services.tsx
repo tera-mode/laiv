@@ -7,15 +7,21 @@ import SectionTitle from './common/SectionTitle';
 export default function Services() {
   const services = [
     {
-      name: 'AIくらべ',
-      description: '複数のAIサービスを簡単に比較・検討',
-      url: 'https://www.ai-kurabe.jp/',
+      name: 'ふるそな',
+      description: 'AIがあなたにぴったりのふるさと納税返礼品を提案',
+      url: 'https://www.furusona.jp/',
       details: ''
     },
     {
       name: 'Weekend President',
       description: 'サラリーマンの週末起業をAIがサポート',
       url: 'https://www.weekend-president.com/',
+      details: ''
+    },
+    {
+      name: 'AIくらべ',
+      description: '複数のAIサービスを簡単に比較・検討',
+      url: 'https://www.ai-kurabe.jp/',
       details: ''
     }
   ];
