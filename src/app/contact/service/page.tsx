@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
 
-export default function ContactPage() {
+export default function ServiceContactPage() {
   const [formData, setFormData] = useState({
+    service: '',
     name: '',
     email: '',
     company: '',
@@ -18,7 +19,13 @@ export default function ContactPage() {
     message: string;
   }>({ type: null, message: '' });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const services = [
+    { value: 'furusona', label: 'ふるそな' },
+    { value: 'weekend-president', label: 'Weekend President' },
+    { value: 'ai-kurabe', label: 'AIくらべ' }
+  ];
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -31,7 +38,7 @@ export default function ContactPage() {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/contact/service', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,6 +55,7 @@ export default function ContactPage() {
         });
         // フォームをリセット
         setFormData({
+          service: '',
           name: '',
           email: '',
           company: '',
@@ -83,14 +91,14 @@ export default function ContactPage() {
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-3xl md:text-4xl font-bold text-black mb-4 uppercase">
-                Contact
+                Service Contact
               </h1>
               <p className="text-gray-600 mb-4">
-                各種ご相談や、広報関係、パートナーシップなどのお問い合わせはこちらから。
+                運営サービスに関するお問い合わせはこちらから。
               </p>
               <p className="text-gray-600">
-                運営サービスに関するお問い合わせは
-                <a href="/contact/service" className="text-blue-600 hover:text-blue-700 underline ml-1">
+                その他のお問い合わせは
+                <a href="/contact" className="text-blue-600 hover:text-blue-700 underline ml-1">
                   こちら
                 </a>
               </p>
@@ -113,6 +121,27 @@ export default function ContactPage() {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                    お問い合わせサービス <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                  >
+                    <option value="">選択してください</option>
+                    {services.map((service) => (
+                      <option key={service.value} value={service.value}>
+                        {service.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     お名前 <span className="text-red-500">*</span>
