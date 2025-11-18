@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { validateMessageContent, isSpamName, isSpamCompany } from '../../../../utils/spamValidation';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -23,6 +24,29 @@ export async function POST(request: NextRequest) {
     if (!service || !name || !email || !message) {
       return NextResponse.json(
         { error: '必須項目が入力されていません' },
+        { status: 400 }
+      );
+    }
+
+    // スパムバリデーション
+    const messageError = validateMessageContent(message);
+    if (messageError) {
+      return NextResponse.json(
+        { error: messageError },
+        { status: 400 }
+      );
+    }
+
+    if (isSpamName(name)) {
+      return NextResponse.json(
+        { error: '入力内容をご確認ください' },
+        { status: 400 }
+      );
+    }
+
+    if (company && isSpamCompany(company)) {
+      return NextResponse.json(
+        { error: '入力内容をご確認ください' },
         { status: 400 }
       );
     }

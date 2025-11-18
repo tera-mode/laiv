@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import { validateMessageContent, isSpamName, isSpamCompany } from '../../../utils/spamValidation';
 
 export default function ServiceContactPage() {
   const [formData, setFormData] = useState({
@@ -36,6 +37,38 @@ export default function ServiceContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: '' });
+
+    // フロントエンドでスパムバリデーション
+    const messageError = validateMessageContent(formData.message);
+    if (messageError) {
+      setSubmitStatus({
+        type: 'error',
+        message: messageError,
+      });
+      setIsSubmitting(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (isSpamName(formData.name)) {
+      setSubmitStatus({
+        type: 'error',
+        message: '入力内容をご確認ください',
+      });
+      setIsSubmitting(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (formData.company && isSpamCompany(formData.company)) {
+      setSubmitStatus({
+        type: 'error',
+        message: '入力内容をご確認ください',
+      });
+      setIsSubmitting(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
 
     try {
       const response = await fetch('/api/contact/service', {
