@@ -7,7 +7,7 @@ import SectionTitle from './common/SectionTitle';
 export default function Services() {
   const services = [
     {
-      name: 'ふるそな',
+      name: 'あなたのふるさと納税AI',
       description: 'AIがあなたにぴったりのふるさと納税返礼品を提案',
       url: 'https://www.furusona.jp/',
       details: ''

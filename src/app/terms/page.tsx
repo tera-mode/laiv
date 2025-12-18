@@ -30,7 +30,7 @@ export default function TermsPage() {
                 <ol className="list-decimal ml-6 text-gray-700 space-y-2 mb-4">
                   <li><strong>「AIくらべ」</strong>：複数のAIサービスを簡単に比較・検討できるプラットフォームサービス</li>
                   <li><strong>「Weekend President」</strong>：サラリーマンの週末起業をAIがサポートするサービス</li>
-                  <li><strong>「ふるそな」</strong>：ふるさと納税のあなた専用AIコンシェルジュ</li>
+                  <li><strong>「あなたのふるさと納税AI」</strong>：ふるさと納税のあなた専用AIコンシェルジュ</li>
                   <li><strong>その他当社が提供するAI関連サービス</strong></li>
                 </ol>
                 <p className="text-gray-700">

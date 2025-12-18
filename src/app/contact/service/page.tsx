@@ -21,7 +21,7 @@ export default function ServiceContactPage() {
   }>({ type: null, message: '' });
 
   const services = [
-    { value: 'furusona', label: 'ふるそな' },
+    { value: 'furusona', label: 'あなたのふるさと納税AI' },
     { value: 'weekend-president', label: 'Weekend President' },
     { value: 'ai-kurabe', label: 'AIくらべ' }
   ];
