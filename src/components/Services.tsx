@@ -17,12 +17,6 @@ export default function Services() {
       description: 'サラリーマンの週末起業をAIがサポート',
       url: 'https://www.weekend-president.com/',
       details: ''
-    },
-    {
-      name: 'AIくらべ',
-      description: '複数のAIサービスを簡単に比較・検討',
-      url: 'https://www.ai-kurabe.jp/',
-      details: ''
     }
   ];
 
