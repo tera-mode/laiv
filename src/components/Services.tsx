@@ -17,6 +17,12 @@ export default function Services() {
       description: 'サラリーマンの週末起業をAIがサポート',
       url: 'https://www.weekend-president.com/',
       details: ''
+    },
+    {
+      name: 'じぶんクラフト',
+      description: '自分の特徴を掘って、集めて、つくろう',
+      url: 'https://www.mecraft.life/',
+      details: ''
     }
   ];
 
@@ -30,7 +36,7 @@ export default function Services() {
           AIを活用したウェブサービスの開発・運営を行っています
         </p>
 
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
             {services.map((service, index) => (
               <a
                 key={index}

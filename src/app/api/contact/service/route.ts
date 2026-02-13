@@ -13,7 +13,8 @@ const transporter = nodemailer.createTransport({
 const serviceNames: { [key: string]: string } = {
   'furusona': 'あなたのふるさと納税AI',
   'weekend-president': 'Weekend President',
-  'ai-kurabe': 'AIくらべ'
+  'ai-kurabe': 'AIくらべ',
+  'mecraft': 'じぶんクラフト'
 };
 
 export async function POST(request: NextRequest) {

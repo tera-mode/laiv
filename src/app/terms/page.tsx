@@ -31,6 +31,7 @@ export default function TermsPage() {
                   <li><strong>「AIくらべ」</strong>：複数のAIサービスを簡単に比較・検討できるプラットフォームサービス</li>
                   <li><strong>「Weekend President」</strong>：サラリーマンの週末起業をAIがサポートするサービス</li>
                   <li><strong>「あなたのふるさと納税AI」</strong>：ふるさと納税のあなた専用AIコンシェルジュ</li>
+                  <li><strong>「じぶんクラフト」</strong>：自分の特徴を掘って、集めて、つくろう</li>
                   <li><strong>その他当社が提供するAI関連サービス</strong></li>
                 </ol>
                 <p className="text-gray-700">

@@ -23,7 +23,8 @@ export default function ServiceContactPage() {
   const services = [
     { value: 'furusona', label: 'あなたのふるさと納税AI' },
     { value: 'weekend-president', label: 'Weekend President' },
-    { value: 'ai-kurabe', label: 'AIくらべ' }
+    { value: 'ai-kurabe', label: 'AIくらべ' },
+    { value: 'mecraft', label: 'じぶんクラフト' }
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
